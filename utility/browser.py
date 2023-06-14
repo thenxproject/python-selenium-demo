@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.expected_conditions import *
 
@@ -17,7 +18,7 @@ class Browser:
     def find_element(self, by) -> WebElement:
         return self.wait.until(visibility_of_element_located(by))
 
-    def click(self, by):
+    def click_element(self, by):
         element = self.find_element(by)
         element.click()
 
@@ -27,7 +28,8 @@ class Browser:
 
     def set_text(self, by, text: str):
         element = self.find_element(by)
-        element.send_keys(element, text)
+        element.clear()
+        element.send_keys(f"{text}{Keys.TAB}")
 
     def get_attribute(self, by, attribute: str) -> str:
         element = self.find_element(by)
