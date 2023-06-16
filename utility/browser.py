@@ -18,7 +18,7 @@ class Browser:
     def find_element(self, by) -> WebElement:
         return self.wait.until(visibility_of_element_located(by))
 
-    def click_element(self, by):
+    def click(self, by):
         element = self.find_element(by)
         element.click()
 
