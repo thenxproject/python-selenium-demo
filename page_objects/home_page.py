@@ -9,8 +9,8 @@ class HomePage(BasePage):
         self.at_checker = (By.CSS_SELECTOR, "[title='Search']")
         self.url = "https://google.com"
         self.search_textbox = (By.CSS_SELECTOR, "[title='Search']")
-        self.search_button = (By.CSS_SELECTOR, "[aria-label='Google Search']")
-        self.signin_button = (By.CLASS_NAME, "gb_Md")
+        self.search_button = (By.CSS_SELECTOR, ".FPdoLc [aria-label='Google Search']")
+        self.signin_button = (By.CLASS_NAME, "gb_Nd")
 
     def set_search_textbox(self, text: str):
         self.browser.set_text(self.search_textbox, text)
@@ -25,7 +25,7 @@ class HomePage(BasePage):
         self.browser.click_element(self.search_button)
 
     def get_search_button_text(self) -> str:
-        return self.browser.get_text(self.search_button)
+        return self.browser.get_attribute(self.search_button, "value")
 
 
 
