@@ -22,7 +22,7 @@ class HomePage(BasePage):
         return self.browser.get_text(self.signin_button)
 
     def click_search_button(self):
-        self.browser.click_element(self.search_button)
+        self.browser.click(self.search_button)
 
     def get_search_button_text(self) -> str:
         return self.browser.get_attribute(self.search_button, "value")
