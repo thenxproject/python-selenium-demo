@@ -4,8 +4,7 @@ from selenium.webdriver.common.by import By
 
 class HomePage(BasePage):
     def __init__(self, browser):
-        super().__init__()
-        self.browser = browser
+        super().__init__(browser)
         self.at_checker = (By.CSS_SELECTOR, "[title='Search']")
         self.url = "https://google.com"
         self.search_textbox = (By.CSS_SELECTOR, "[title='Search']")

@@ -6,7 +6,7 @@ from selenium.webdriver.support.expected_conditions import *
 
 # Create the webdriver the proper driver can be downloaded from https://github.com/mozilla/geckodriver/releases
 # Put the downloaded driver in the webdrivers folder and make sure the file name is correct
-driver = webdriver.Firefox()
+driver = webdriver.Safari()
 
 # opens the browser and goes to google
 driver.get("https://www.google.com")

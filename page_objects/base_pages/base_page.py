@@ -2,7 +2,7 @@ from utility.browser import Browser
 
 
 class BasePage:
-    def __int__(self, browser: Browser):
+    def __init__(self, browser: Browser):
         self.at_checker = ()
         self.url = ""
         self.browser = browser
